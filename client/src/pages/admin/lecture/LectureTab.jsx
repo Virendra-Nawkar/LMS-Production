@@ -30,7 +30,7 @@ const LectureTab = () => {
     const [uploadProgress, setUploadProgress] = useState(0);
     const [buttonDisable, setButtonDisable] = useState(true);
     const [openDialog, setOpenDialog] = useState(false);
-    const MEDIA_API = "https://lms.virpages.com//api/v1/media";
+    const MEDIA_API = "https://lms.virpages.com/api/v1/media";
 
     // ✅ Fix: Call useParams() correctly
     const params = useParams();

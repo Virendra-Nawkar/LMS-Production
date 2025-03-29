@@ -39,8 +39,8 @@ export const createCheckoutSession = async (req, res) => {
         },
       ],
       mode: "payment",
-      success_url: `https://lms.virpages.com//course-progress/${courseId}`, // once payment successful redirect to course progress page
-      cancel_url: `https://lms.virpages.com//course-detail/${courseId}`,
+      success_url: `https://lms.virpages.com/course-progress/${courseId}`, // once payment successful redirect to course progress page
+      cancel_url: `https://lms.virpages.com/course-detail/${courseId}`,
       metadata: {
         courseId: courseId,
         userId: userId,
