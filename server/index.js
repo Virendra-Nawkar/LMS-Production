@@ -20,7 +20,7 @@ const _dirname = path.resolve();
 const app = express();
 app.use(cookieParser());
 app.use(cors({
-    origin: "https://lms.virpages.com/",
+    origin: "https://lms.virpages.com",
     credentials: true,
 }))
 
@@ -32,11 +32,11 @@ app.use(express.json());
 
 
 // apis - Middleware to get data from backend
-app.use("/api/v1/media", mediaRoute)
-app.use("/api/v1/user", userRoute)
-app.use("/api/v1/course", courseRoute)
-app.use("/api/v1/purchase", purchaseRoute)
-app.use("/api/v1/progress", courseProgressRoute);
+app.use("api/v1/media", mediaRoute)
+app.use("api/v1/user", userRoute)
+app.use("api/v1/course", courseRoute)
+app.use("api/v1/purchase", purchaseRoute)
+app.use("api/v1/progress", courseProgressRoute);
 
 
 

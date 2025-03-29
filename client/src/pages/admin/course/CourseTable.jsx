@@ -6,23 +6,26 @@ import { useGetCreatorCourseQuery } from '@/features/api/courseApi.js';
 import { Badge } from '@/components/ui/badge';
 import { Edit, Edit2 } from 'lucide-react';
 import { toast } from 'sonner';
+import useDocumentTitle from '@/lib/useDocumentTitle';
 
 const CourseTable = () => {
-    // ✅ Hooks must be at the top level
-    const { data, isLoading, isSuccess, error } = useGetCreatorCourseQuery();
-    const navigate = useNavigate();
+  useDocumentTitle("Course Content");
 
-    if (isLoading) return <h1 className='text-7xl'>Loading...</h1>;
-    
-    
+  // ✅ Hooks must be at the top level
+  const { data, isLoading, isSuccess, error } = useGetCreatorCourseQuery();
+  const navigate = useNavigate();
 
-    return (
-        <div>
-            <Button onClick={() => navigate('/admin/course/create')}>
-                Create a New Course
-            </Button>
+  if (isLoading) return <h1 className='text-7xl'>Loading...</h1>;
 
-            <Table>
+
+
+  return (
+    <div>
+      <Button onClick={() => navigate('/admin/course/create')}>
+        Create a New Course
+      </Button>
+
+      <Table>
         <TableCaption>A list of your recent courses.</TableCaption>
         <TableHeader>
           <TableRow>
@@ -39,7 +42,7 @@ const CourseTable = () => {
               <TableCell> <Badge>{course.isPublished ? "Published" : "Draft"}</Badge> </TableCell>
               <TableCell>{course.courseTitle}</TableCell>
               <TableCell className="text-right">
-                 <Button size='sm' variant='ghost' onClick={() => navigate(`${course._id}`)}><Edit2/></Button>
+                <Button size='sm' variant='ghost' onClick={() => navigate(`${course._id}`)}><Edit2 /></Button>
               </TableCell>
             </TableRow>
           ))}

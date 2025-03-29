@@ -2,11 +2,13 @@ import { Button } from '@/components/ui/button'
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import CourseTab from './CourseTab';
+import useDocumentTitle from '@/lib/useDocumentTitle';
 
 
 
 
 const EditCourses = () => {
+  useDocumentTitle("Edit Course");
     const navigate = useNavigate();
   return (
     <div className='flex-1'>

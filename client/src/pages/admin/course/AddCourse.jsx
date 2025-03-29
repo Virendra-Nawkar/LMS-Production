@@ -4,12 +4,14 @@ import { Label } from '@/components/ui/label'
 
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue, } from "@/components/ui/select"
 import { useCreateCourseMutation } from '@/features/api/courseApi'
+import useDocumentTitle from '@/lib/useDocumentTitle'
 import { Loader2, MoveLeft } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 
 const AddCourse = () => {
+  useDocumentTitle("Add Course");
   const navigate = useNavigate();
   const [courseTitle, setCourseTitle] = useState("")
   const [category, setCategory] = useState("")

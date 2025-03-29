@@ -2,9 +2,12 @@ import React from 'react'
 import CourseSkeleton from './CourseSkeleton';
 import Course from './Course';
 import { useLoadUserQuery } from '@/features/api/authApi';
+import useDocumentTitle from '@/lib/useDocumentTitle';
 
 
 const MyLearning = () => {
+  useDocumentTitle("My Learning");
+
     // const isLoading = false;
     const myLearningCouses = [];
     const { data, isLoading } = useLoadUserQuery();

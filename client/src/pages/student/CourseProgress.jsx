@@ -2,12 +2,15 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { useCompleteCourseMutation, useGetCourseProgressQuery, useInCompleteCourseMutation, useUpdateLectureProgressMutation } from "@/features/api/courseProgressApi";
+import useDocumentTitle from "@/lib/useDocumentTitle";
 import { CheckCircle, CheckCircle2, CirclePlay } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "sonner";
 
 const CourseProgress = () => {
+    useDocumentTitle("Course Title");
+  
   const params = useParams();
   const courseId = params.courseId;
 

@@ -10,12 +10,14 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useGetCourseDetailWithStatusQuery } from "@/features/api/purchaseApi";
+import useDocumentTitle from "@/lib/useDocumentTitle";
 import { BadgeInfo, Lock, PlayCircle } from "lucide-react";
 import React from "react";
 import ReactPlayer from "react-player";
 import { useNavigate, useParams } from "react-router-dom";
 
 const CourseDetail = () => {
+  useDocumentTitle("Course Details");
   const params = useParams();
   const courseId = params.courseId;
   const navigate = useNavigate(); 

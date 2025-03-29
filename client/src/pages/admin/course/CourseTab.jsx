@@ -10,8 +10,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useEditCourseMutation, useGetCourseByIdQuery, usePublishCourseMutation } from '@/features/api/courseApi';
 import { toast } from 'sonner';
 import { to } from 'react-spring';
+import useDocumentTitle from '@/lib/useDocumentTitle';
 
 const CourseTab = () => {
+  useDocumentTitle("Course Content");
     const params = useParams();
     const courseId = params.courseId;
     const [publishCourse, { }] = usePublishCourseMutation();

@@ -17,8 +17,11 @@ import React, { useEffect, useState } from "react";
 import Course from "./Course";
 import { useLoadUserQuery, useUpdateUserMutation } from "@/features/api/authApi";
 import { toast } from "sonner";
+import useDocumentTitle from "@/lib/useDocumentTitle";
 
 const Profile = () => {
+  useDocumentTitle("My Profile");
+
   const { data, isLoading, refetch } = useLoadUserQuery();
   const [name, setName] = useState("");
   const [profilePhoto, setProfilePhoto] = useState("");

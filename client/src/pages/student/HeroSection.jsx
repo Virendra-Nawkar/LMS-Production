@@ -2,8 +2,10 @@ import { Button } from '@/components/ui/button'
 import React, { useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { useNavigate } from 'react-router-dom'
+import useDocumentTitle from '@/lib/useDocumentTitle'
 
 const HeroSection = () => {
+  useDocumentTitle("Home");
   const [searchQuery, setSearchQuery] = useState();
   const navigate = useNavigate()
   const searchHandler = (e) => {

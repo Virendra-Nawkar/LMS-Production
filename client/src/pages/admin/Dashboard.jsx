@@ -1,9 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useGetPurchasedCoursesQuery } from '@/features/api/purchaseApi';
+import useDocumentTitle from '@/lib/useDocumentTitle';
 import React from 'react'
 import { CartesianGrid, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis, Line } from 'recharts'
 
 const Dashboard = () => {
+    useDocumentTitle("Dashbaord");
     const { data, isSuccess, isError, isLoading } = useGetPurchasedCoursesQuery();
 
     if (isLoading) return <h1>Loading...</h1>;
