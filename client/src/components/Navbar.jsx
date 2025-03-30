@@ -18,6 +18,7 @@ import logo_re from '@/assets/logo-removebg-preview.png';
 
 
 const Navbar = () => {
+
   const { user } = useSelector(store => store.auth);
 
   const [logoutUser, { data, isSuccess }] = useLogoutUserMutation();
@@ -45,7 +46,8 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           {/* user icon and darkmode icon */}
           {/* drop down */}
-          {user ? (
+          {user ? (<>
+          <Button className="underline cursor-pointer" onClick={()=>window.open("https://virpages.com/", "_blank")}>virpages.com</Button>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Avatar>
@@ -75,9 +77,10 @@ const Navbar = () => {
 
               </DropdownMenuContent>
             </DropdownMenu>
-
+          </>
           ) : (
             <div className='flex items-center gap-2'>
+              <Button>virpages.com</Button>
               <Button variant="outline" onClick={() => {
                 navigate("/login")
               }}> Login</Button >
@@ -105,8 +108,8 @@ const Navbar = () => {
 export default Navbar
 
 
-const MobileNavbar = ({user}) => {
-  
+const MobileNavbar = ({ user }) => {
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -117,6 +120,7 @@ const MobileNavbar = ({user}) => {
       <SheetContent className=" flex flex-col">
         <SheetHeader className="flex flex-row items-center justify-between  gap-4 p-4 mr-8">
           <SheetTitle><Link to={"/"}>Study<span className="text-green-500">Tree</span></Link></SheetTitle>
+          <Button className="underline cursor-pointer" onClick={()=>window.open("https://virpages.com/", "_blank")}>virpages.com</Button>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <DarkMode />
@@ -125,9 +129,9 @@ const MobileNavbar = ({user}) => {
         </SheetHeader>
         <Separator className="mr-2" />
         <nav className="flex flex-col space-y-4 ml-4">
-        <Link to="/my-learning">My Learning</Link>
-        <Link to="/profile">Edit Profile</Link>
-        <p>Logout</p>
+          <Link to="/my-learning">My Learning</Link>
+          <Link to="/profile">Edit Profile</Link>
+          <p>Logout</p>
           {
             user?.role === "instructor" && (
               <SheetFooter>
