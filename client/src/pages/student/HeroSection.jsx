@@ -19,7 +19,7 @@ const HeroSection = () => {
   return (
     <div className='relative bg-gradient-to-r from-blue-400 to bg-indigo-600 dark:from-gray-800 dark:to-gray-900 py-24 px-4 text-center '>
       <div className='max-w-3xl mx-auto'>
-        <h1 className='text-4xl font-bold text-white  mb-4  dark:text-gray-200'>Welcome to StudyTree</h1>
+        <h1 className='text-4xl font-bold text-white  mb-4  dark:text-gray-200'>Welcome to Study<span className='text-green-500'>Tree</span></h1>
         <p className='text-lg text-gray-2 00 dark:text-gray-200 mb-8'>Learn from the best teachers.</p>
         <form onSubmit={searchHandler} className='flex items-center  bg-white dark:bg-gray-800  rounded-full shadow-lg  overflow-hidden  max-w-xl mx-auto  mb-6'>
           <Input type="text" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)}
