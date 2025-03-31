@@ -57,8 +57,8 @@ StudyTree is a **Learning Management System (LMS)** that enables students to enr
 ## 🎯 Installation & Setup
 ### **1️⃣ Clone the Repository**
 ```sh
-git clone https://github.com/yourusername/studytree.git
-cd studytree
+git clone git@github.com:Virendra-Nawkar/LMS-Production.git
+cd LMS-Production
 ```
 
 ### **2️⃣ Install Dependencies**
